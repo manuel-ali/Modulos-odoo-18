@@ -12,7 +12,7 @@ class Expediente(models.Model):
     def _default_name(self):
         # Se obtiene el próximo número disponible de la secuencia
         sequence = self.env['ir.sequence'].next_by_code('expedientes.expediente')
-        anyoa_ctual = datetime.datetime.now().year  # Obtener el año actual
+        current_year = datetime.datetime.now().year  # Obtener el año actual
         # Formatear el nombre del expediente como 'EXP-<Número>-<Año>'
         return "EXP-{}/{}".format(sequence, current_year)
 
