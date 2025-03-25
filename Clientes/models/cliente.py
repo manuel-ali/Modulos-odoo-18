@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 from odoo.modulos.Abogados.utils.dni_validation import validate_dni
 
 
-#from odoo.modulos.Abogados.utils.dni_validation import validate_dni
+#from odoo.addons.Abogados.utils.dni_validation import validate_dni
 
 class Cliente(models.Model):
     _name = 'clientes.cliente'

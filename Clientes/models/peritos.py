@@ -2,6 +2,8 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from odoo.modulos.Abogados.utils.dni_validation import validate_dni
 
+#from odoo.addons.Abogados.utils.dni_validation import validate_dni
+
 class Perito(models.Model):
     _name = 'peritos.perito'
     _description = 'Peritos'
