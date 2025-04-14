@@ -48,7 +48,7 @@ class Tramite(models.Model):
             if not (record.Fecha_Inicio and record.dias_habiles and record.region):
                 record.Fecha_Vencimiento = False
                 continue
-            fecha_inicio = fields.Date.from_string(record.FechaInicio)
+            fecha_inicio = fields.Date.from_string(record.Fecha_Inicio)
             fecha_final = fecha_inicio
             dias_agregados = 0
             while dias_agregados < record.dias_habiles:
