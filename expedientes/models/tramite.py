@@ -28,9 +28,13 @@ class Tramite(models.Model):
 
     @api.model
     def create(self, vals):
-        # Primero creas el trámite
+        # Se comprueba si hay que crear un expediente o ya viene uno asígnado al trámite
+        if vals.get('crear_expediente') and not vals.get('expediente_id'):
+                    expediente_name = self._default_expediente_name()
+                    expediente = self.env['expedientes.expediente'].create({'name': expediente_name})
+                    vals['expediente_id'] = expediente.id
+        # Se crea el trámite
         tramite = super(Tramite, self).create(vals)
-
         # Comprueba si se debe crear un evento en el calendario
         if tramite.crear_en_calendario:
             self.env['calendar.event'].create({
@@ -69,13 +73,6 @@ class Tramite(models.Model):
         # Formatear el nombre del expediente como 'EXP-Número/Año'
         return "EXP-{}/{}".format(sequence, current_year)
 
-    @api.model
-    def create(self, vals):
-        if vals.get('crear_expediente') and not vals.get('expediente_id'):
-            expediente_name = self._default_expediente_name()
-            expediente = self.env['expedientes.expediente'].create({'name': expediente_name})
-            vals['expediente_id'] = expediente.id
-        return super(Tramite, self).create(vals)
 
     @api.onchange('crear_expediente')
     def _onchange_crear_expediente(self):
