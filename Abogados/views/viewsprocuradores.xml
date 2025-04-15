@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Vista de Árbol para Procurador
-    <record id="view_procurador_tree" model="ir.ui.view">
-        <field name="name">procurador.tree</field>
-        <field name="model">procuradores.procurador</field>
-        <field name="arch" type="xml">
-            <tree string="Vista de Árbol Procuradores">
-                <field name="dni"/>
-                <field name="nombre_completo"/>
-                <field name="direccion"/>
-                <field name="telefono"/>
-                <field name="provincia"/>
-                <field name="banco"/>
-                <field name="numero_de_cuenta"/>
-            </tree>
-        </field>
-    </record>-->
- 
-
-    <!-- Vista de lista para Procuradores tree es incompatible en odoo18-->
+    <!-- Vista de lista para Procuradores-->
     <record id="view_procurador_list" model="ir.ui.view">
         <field name="name">procurador.list</field>
         <field name="model">procuradores.procurador</field>

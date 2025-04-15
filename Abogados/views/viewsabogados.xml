@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Vista de Árbol para Abogados -->
-    <!--
-    <record id="view_abogado_tree" model="ir.ui.view">
-        <field name="name">abogado.tree</field>
-        <field name="model">abogados.abogado</field>
-        <field name="arch" type="xml">
-            <tree string="Vista de Árbol Trámites">
-                <field name="nombre"/>
-                <field name="dni"/>
-                <field name="email"/>
-                <field name="telefono_movil"/>
-                <field name="tipo"/>
-            </tree>
-        </field>
-    </record>
-    -->
     <!--Vista lista-->
      <record id="view_abogado_list" model="ir.ui.view">
         <field name="name">abogado.list</field>
@@ -90,4 +74,3 @@
     <menuitem name="Abogados" id="menu_abogado" parent="abogados_menu" action="action_abogado"/>
     <menuitem name="Procuradores" id="menu_procuradores" parent="abogados_menu" action="action_view_procuradores"/>
 </odoo>
-
