@@ -24,7 +24,7 @@ class Tramite(models.Model):
                               help="La fecha de Inicio desde donde se quiere empezar a contar los dias")
     dias_habiles = fields.Integer(string='Días Hábiles')
     Fecha_Vencimiento = fields.Date(string='Fecha de Vencimiento', compute='_calcular_fecha_vencimiento')
-    crear_en_calendario = fields.Boolean(string='Crear Evento en Calendario', default=True)
+    crear_en_calendario = fields.Boolean(string='Crear Evento en Calendario', default=False)
 
     @api.model
     def create(self, vals):
