@@ -30,7 +30,7 @@
                         <field name="crear_expediente"/>
                         <field name="descripcion"/>
                     </group>
-                    <group string="Informan de Fechas">
+                    <group string="Información de Fechas">
                         <field name="region"/>
                         <field name="Fecha_Presentacion"/>
                         <field name="Fecha_Inicio"/>
