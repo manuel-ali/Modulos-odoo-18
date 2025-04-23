@@ -29,6 +29,7 @@ class Expediente(models.Model):
         'clientes.cliente',
         string='Clientes Contrarios',
         domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Hacemos que al crear desde este campo, su tipo por defecto sea contrario
         help="Seleccione un cliente que sea parte de los contrarios."
     )
 
@@ -42,6 +43,7 @@ class Expediente(models.Model):
         'abogados.abogado',
         string='Abogados Contrarios',
         domain=[('tipo', '=', 'contrario')],  # Solo abogados contrarios
+        context={'default_tipo':'contrario'}, # Hacemos que al crear desde este campo, su tipo por defecto sea contrario
         help="Seleccione un abogado que sea parte de los contrarios."
     )
 
@@ -61,6 +63,7 @@ class Expediente(models.Model):
         'peritos.perito',
         string='Perito Contrario',
         domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Hacemos que al crear desde este campo, se nos crea perito contrario
         help="Seleccione un perito que sea parte de los contrarios."
     )
 
@@ -71,6 +74,7 @@ class Expediente(models.Model):
         'procuradores.procurador',
         string='Procurador Contrario',
         domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Para que se cree por defecto como procurador contrario
         help="Seleccione un procurador que sea parte de los contrarios."
     )
 
@@ -143,6 +147,7 @@ class Expediente(models.Model):
         'cliente_id',
         string='Contrarios Colectivo',
         domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Se nos crea cliente contrario en caso de crearlo desde este campo
         help="Seleccione clientes que sean parte de los contrarios."
     )
 
@@ -161,7 +166,8 @@ class Expediente(models.Model):
         'expediente_id',
         'perito_id',
         string='Peritos Contrarios Colectivo',
-        domain=[('tipo', '=', 'bufete')],
+        domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Se nos crea perito contrario en caso de crearlo desde este campo
         help="Seleccione peritos que sean parte de los contrarios."
     )
     abogados_colectivo = fields.Many2many(
@@ -180,6 +186,7 @@ class Expediente(models.Model):
         'abogado_id',
         string='Abogados Contrarios Colectivos',
         domain=[('tipo', '=', 'contrario')],
+        context={'default_tipo':'contrario'}, # Se crea abogado contrario desde este campo
         help="Seleccione abogados que sean parte de los contrarios."
     )
 
