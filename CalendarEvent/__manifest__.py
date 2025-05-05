@@ -7,7 +7,9 @@
     'summary': 'Añade funcionalidades relacionadas con trámites al calendario.',
     'sequence': 10,
     'depends': ['base', 'calendar'],
-    'data': [],
+    'data': [
+        'views/calendar_view.xml',
+    ],
     'demo': [],
     'installable': True,
     'application': True,
