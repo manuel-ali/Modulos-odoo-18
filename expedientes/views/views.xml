@@ -12,7 +12,7 @@
                 <field name="fecha_subida"/>
                 <field name="fecha_asignacion_cliente"/>
                 <field name="fecha_asignacion_expediente"/>
-                <field name="archivo" widget="binary" filename="namedocument"/>
+                <field name="archivo" widget="binary"/>
                 <field name="name_document"/>
             </list>
         </field>
@@ -31,8 +31,8 @@
                         <field name="fecha_asignacion_cliente"/>
                         <field name="expediente"/>
                         <field name="fecha_asignacion_expediente"/>
-                        <field name="archivo"  widget="binary" filename="namedocument" />
-                        <field name="name_document" invisible="1"/>
+                        <field name="archivo"  widget="binary" filename="name_document" />
+                        <field name="name_document"/>
                         <field name="fecha_subida"/>
                     </group>
 
