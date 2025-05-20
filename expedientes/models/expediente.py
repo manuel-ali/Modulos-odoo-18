@@ -5,17 +5,17 @@ class Expediente(models.Model):
     _description = 'Expediente'
 
     # Hacer el campo name editable para la importación
-    name = fields.Char(string='Número de referencia del expediente', required=True, readonly=True,
-                       default=lambda self: self._default_name())
+    name = fields.Char(string='Número de referencia del expediente', required=True)
 
     # Función para generar el nombre del expediente automáticamente
+    """
     def _default_name(self):
         # Se obtiene el próximo número disponible de la secuencia
         sequence = self.env['ir.sequence'].next_by_code('expedientes.expediente')
         current_year = datetime.datetime.now().year  # Obtener el año actual
         # Formatear el nombre del expediente como 'EXP-<Número>-<Año>'
         return "EXP-{}/{}".format(sequence, current_year)
-
+    """
     tramites_ids = fields.One2many('tramites.tramite', 'expediente_id', string='Trámites Asociados')
     documentos_ids = fields.One2many('documents.document', 'expediente', string='Documentos Asociados')
 
