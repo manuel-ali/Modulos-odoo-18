@@ -79,7 +79,7 @@ class Perito(models.Model):
     ], string='Tipo de Perito', required=True, default='bufete')
 
     observaciones = fields.Text(string='Observaciones')
-
+"""
     # FUNCIONES QUE LLAMAN A LA VALIDACION
     @api.constrains('dni')
     def _check_dni(self):
@@ -109,3 +109,4 @@ class Perito(models.Model):
         if 'dni' in vals:
             validate_dni(vals['dni'])
         return super(Perito, self).write(vals)
+"""

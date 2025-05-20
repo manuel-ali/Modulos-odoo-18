@@ -1,6 +1,4 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
-from ..utils.dni_validation import validate_dni
 
 
 class Abogado(models.Model):
@@ -93,7 +91,7 @@ class Abogado(models.Model):
 
     # Campos de Observación
     observaciones = fields.Text(string='Observaciones')
-
+"""
     # Funciones que llaman a la validación
     @api.constrains('dni')
     def _check_dni(self):
@@ -123,3 +121,4 @@ class Abogado(models.Model):
         if 'dni' in vals:
             validate_dni(vals['dni'])
         return super(Abogado, self).write(vals)
+"""

@@ -85,7 +85,7 @@ class Cliente(models.Model):
         ('bufete', 'Cliente de Nuestro Bufete'),
         ('contrario', 'Cliente Contrario')
     ], string='Tipo de Cliente', required=True, default='bufete')
-
+"""
     # FUNCIONES QUE LLAMAN A LA VALIDACIÓN
     @api.constrains('dni')
     def _check_dni(self):
@@ -117,7 +117,6 @@ class Cliente(models.Model):
         return super(Cliente, self).write(vals)
 
 
-"""
 Función para conseguir los nombres si nos sale la referencia de los modelos
 EJ ->  clientes.cliente,265 
  def name_get(self):

@@ -1,6 +1,4 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
-from ..utils.dni_validation import validate_dni
 
 class Procurador(models.Model):
     _name = 'procuradores.procurador'
@@ -94,7 +92,7 @@ class Procurador(models.Model):
         ('bufete', 'Procurador de Nuestro Bufete'),
         ('contrario', 'Procurador Contrario')
     ], string='Tipo de Procurador', required=True, default='bufete')
-
+"""
      #Funciones que llaman a la validación
     #@api.constrains('dni')
     #def _check_dni(self):
@@ -124,3 +122,4 @@ class Procurador(models.Model):
         if 'dni' in vals:
             validate_dni(vals['dni'])
         return super(Procurador, self).write(vals)
+"""
